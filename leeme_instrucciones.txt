@@ -1,0 +1,84 @@
+CÓMO PUBLICAR "EL SALTO INTERNACIONAL" SIN ROMPER EL RESTO DEL SITIO
+=====================================================================
+
+Tu sitio www.divorcioenchile.com se publica en Netlify por "Drag & Drop"
+(arrastrar carpeta), NO está conectado a Git. Eso significa que cada vez
+que arrastras una carpeta nueva, Netlify REEMPLAZA TODO el sitio por lo
+que arrastraste. Por eso NO se puede subir solo esta página sola: hay que
+agregarla dentro de la MISMA carpeta local que ya usas para publicar todo
+el sitio (la que contiene index.html, guias/, sitemap.xml, llms.txt,
+_redirects).
+
+PASO 1 — Copia estos dos elementos dentro de tu carpeta local del sitio:
+
+  tu-carpeta-del-sitio/
+  ├── index.html                     (ya existe, no tocar)
+  ├── _redirects                     (ya existe, no tocar)
+  ├── sitemap.xml                    (ya existe — editar, ver Paso 2)
+  ├── llms.txt                       (ya existe — editar, ver Paso 3)
+  ├── guias/                         (ya existe — NO TOCAR POR AHORA.
+  │   ├── divorcio-chile-90-dias/      Se planea moverla a otro proyecto/
+  │   └── divorcio-desde-espana/       subdominio aparte más adelante,
+  │                                    pero eso es un paso separado; no
+  │                                    afecta esta publicación.)
+  ├── salto-internacional/           ← CARPETA NUEVA (viene en este paquete)
+  │   └── index.html
+  └── assets/                        ← si no existe, créala
+      └── og-image.jpg               ← NUEVO (viene en este paquete)
+
+PASO 2 — Edita tu sitemap.xml existente
+
+Abre tu sitemap.xml y agrega esta entrada dentro de <urlset>...</urlset>,
+junto a las que ya tienes:
+
+  <url>
+    <loc>https://www.divorcioenchile.com/salto-internacional</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+PASO 3 — Edita tu llms.txt existente
+
+Agrega una línea describiendo esta página, siguiendo el mismo estilo que
+ya uses para las otras páginas listadas ahí. Por ejemplo (ajusta el
+formato al que ya tengas):
+
+  - [El Salto Internacional](https://www.divorcioenchile.com/salto-internacional):
+    Diagnóstico Inicial de 45 minutos para chilenos en el extranjero que
+    quieren cerrar su divorcio en Chile en 90 días, sin viajar ni consulado.
+    USD $39.
+
+PASO 4 — Vuelve a arrastrar TODA la carpeta (no solo la página nueva) a
+Netlify Drop, en el mismo proyecto "divorcioenchile-oficial":
+
+  https://app.netlify.com/projects/divorcioenchile-oficial/deploys
+
+Arrastra la carpeta completa (con los 3 elementos ya editados/agregados)
+al recuadro de deploy. Netlify reemplaza el sitio entero, pero como ahora
+tu carpeta local ya tiene TODO (lo viejo + lo nuevo), no se pierde nada.
+
+PASO 5 — Verifica
+
+  - https://www.divorcioenchile.com/salto-internacional  → debe cargar la
+    nueva página con el checkout de Hotmart funcionando.
+  - https://www.divorcioenchile.com/                     → debe seguir
+    mostrando tu homepage de siempre.
+  - https://www.divorcioenchile.com/guias/...             → deben seguir
+    funcionando igual.
+  - https://www.divorcioenchile.com/sitemap.xml          → debe mostrar
+    la nueva URL agregada.
+
+Nota sobre el favicon: ya está embebido dentro del propio index.html
+(como base64), así que no necesitas subir ningún archivo de favicon por
+separado — funciona apenas subas la página.
+
+NOTA SOBRE LAS GUÍAS (para más adelante, no ahora):
+Mencionaste que las guías (/guias/...) deberían vivir en un proyecto o
+subdominio aparte, separado del sitio principal. Es una buena práctica
+(separa el contenido SEO del embudo de venta), pero es un cambio de
+arquitectura que conviene planear con cuidado para no perder el
+posicionamiento que esas páginas ya puedan tener en Google (requiere
+redirecciones 301 desde las URLs viejas a las nuevas). Cuando quieras
+hacerlo, avísame y lo armamos como su propio paso — no es necesario
+resolverlo para publicar esta página.
