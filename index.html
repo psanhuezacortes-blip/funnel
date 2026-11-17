@@ -556,6 +556,17 @@ nav.scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border
 .testi-video-pulse{width:6px;height:6px;border-radius:50%;background:var(--gold2);flex-shrink:0;}
 .testi-video-meta-text{font-size:11px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:#ffffff;}
 
+/* ── TESTIMONIOS ESCRITOS ── */
+.testi-written{padding:100px 0;background:var(--black);border-bottom:1px solid var(--hair);}
+.testi-written-inner{max-width:var(--max);margin:0 auto;padding:0 48px;}
+.testi-written-heading{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(38px,5vw,68px);line-height:1.05;color:#fff;text-align:center;margin:0 auto 56px;}
+.testi-written-heading em{font-style:italic;color:var(--gold2);}
+.testi-written-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair-inv);}
+.testi-written-card{background:var(--deep);padding:38px 34px;display:flex;flex-direction:column;gap:22px;}
+.testi-written-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,1.55vw,21px);line-height:1.75;color:#fff;text-align:left;font-weight:400;}
+.testi-written-author{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);}
+@media(max-width:680px){.testi-written-inner{padding:0 28px;}.testi-written-grid{grid-template-columns:1fr;}.testi-written-card{padding:30px 24px;}}
+ 
 /* ── POR QUÉ AHORA ── */
 .ahora{padding:120px 0;background:var(--black);}
 .ahora-headline{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(36px,5vw,68px);line-height:1.1;color:var(--cream);max-width:640px;margin-bottom:56px;}
@@ -808,6 +819,31 @@ src="https://www.facebook.com/tr?id=2739206456473065&ev=PageView&noscript=1"
           <span class="testi-video-meta-text">Testimonio verificado</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3c. TESTIMONIOS ESCRITOS -->
+<section class="testi-written" aria-label="Testimonios escritos de clientes">
+  <div class="testi-written-inner">
+    <h2 class="testi-written-heading">Lo que dicen quienes ya <em>resolvieron</em></h2>
+    <div class="testi-written-grid">
+      <article class="testi-written-card">
+        <p class="testi-written-quote">“Me mantenía al tanto de cada actualización de mi caso, e incluso la respuesta del Juez por ciertas correcciones que se hicieron fue en menos de 24 horas. Al cabo de 10 días desde que se ingresaron mis documentos —quizás 12 días desde que yo pagué y se creó mi caso para ingresar los documentos a la corte— ya tenía la sentencia del Juez que establecía que estaba divorciada. Luego, una espera de otros 5 días hábiles para que saliera la publicación en el Registro Civil. Solo tengo palabras de agradecimiento para Paulina, además de aplaudirle parada por ser tan seca y hacer factible algo que ya veía imposible. ¡1000% recomendable y fiable! Les recomiendo pagar por sus servicios y verán que es la mejor inversión que pueden hacer si están atascados en un proceso de divorcio, aunque no estén en Chile.”</p>
+        <div class="testi-written-author">Angelly H. · Testimonio compartido en Instagram</div>
+      </article>
+      <article class="testi-written-card">
+        <p class="testi-written-quote">“Soy Jacqueline Serrano, chilena y vivo en USA hace muchos años. Un día, muy angustiada por la lejanía de Chile, se me presenta tener que realizar gestiones legales allá, sin saber qué hacer ni cómo hacerlo. Llega a mis manos su nombre y teléfono y desde ese día vi la luz. Han hecho un trabajo minucioso, con ética profesional, de excelencia, responsable, eficiente, confiable y muy serio; y al mismo tiempo, con la esencia de un gran ser humano. La distancia no ha sido impedimento para sentirme cercana a ella y tener confianza. Los llamados telefónicos y correos han sido perfectos para poder estar siempre unidas en este gran trabajo. Estoy realmente agradecida de que esté en mi camino y en mi vida profesional. Solo tengo las mejores referencias para Paulina Sanhueza, abogada chilena.”</p>
+        <div class="testi-written-author">Jacqueline Serrano · Vive en Estados Unidos</div>
+      </article>
+      <article class="testi-written-card">
+        <p class="testi-written-quote">“Mi nombre es Marisol Ayala, vivo en New York hace 17 años. Un día veo en Facebook una publicación sobre una abogada que presta servicios a chilenos que viven en el extranjero, y era ella, Paulina Sanhueza. Le mando un mensaje, hablamos y, en mi angustia por mi problema, ella le da solución. Desde ese momento ha resuelto varios asuntos y aún seguimos trabajando por otros temas. Le agradezco mucho su servicio y gracias por todo. Es de gran ayuda para mí. Gracias a ella mi nieto me vino a ver; gracias a ella mi hijo solucionó un problema. En fin, felicitaciones y bendiciones.”</p>
+        <div class="testi-written-author">Marisol Ayala (Mayly Moyano) · Vive en Nueva York</div>
+      </article>
+      <article class="testi-written-card">
+        <p class="testi-written-quote">“Hola, soy chilena y vivo en Canadá. A fines del año pasado estaba muy complicada, no sabía qué hacer con una gestión en Chile. Buscando y buscando encontré a Paulina Sanhueza, abogada chilena. Le expliqué mi situación, que era realmente urgente, y en cuestión de días estaba solucionada. Yo, muy feliz y satisfecha. Paulina es muy profesional y aparte es muy simpática; me llama y pregunta cómo estamos. Además de ser profesional, es muy humana. La adoro. Actualmente estoy haciendo otras gestiones en Chile y nuevamente Paulina me representa. Le tengo una confianza única. A veces le hablo de cosas que no tienen nada que ver con el caso y ella me escucha respetuosamente. Estoy muy agradecida de ella. Gracias, Paulina Sanhueza, eres una excelente abogada.”</p>
+        <div class="testi-written-author">Conchi Tita DH · Vive en Canadá</div>
+      </article>
     </div>
   </div>
 </section>
