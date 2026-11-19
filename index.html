@@ -941,10 +941,10 @@ nav.scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border
   <p style="font-size:12px;font-weight:400;letter-spacing:1px;color:#c98955;text-align:center;margin-bottom:8px;">Paulina Andrea Sanhueza Cortés · Abogada</p>
   <p style="font-size:12px;font-weight:300;letter-spacing:1px;color:#c98955;text-align:center;margin-bottom:12px;"><a href="mailto:hola@divorcioenchile.com" style="color:#c98955;text-decoration:none;">hola@divorcioenchile.com</a></p>
   <nav aria-label="Información legal" style="position:static;height:auto;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:0 auto 14px;">
-    <a href="/aviso-legal.html" style="font-size:11px;color:#d9c7b5;text-decoration:none;">Aviso legal</a>
-    <a href="/condiciones-asesoria.html" style="font-size:11px;color:#d9c7b5;text-decoration:none;">Condiciones de la asesoría</a>
-    <a href="/privacidad.html" style="font-size:11px;color:#d9c7b5;text-decoration:none;">Privacidad</a>
-    <a href="/cookies.html" style="font-size:11px;color:#d9c7b5;text-decoration:none;">Cookies</a>
+    <a href="/aviso-legal.html" style="font-size:11px;color:#929292;text-decoration:none;opacity:.8;">Aviso legal</a>
+    <a href="/condiciones-asesoria.html" style="font-size:11px;color:#929292;text-decoration:none;opacity:.8;">Condiciones de la asesoría</a>
+    <a href="/privacidad.html" style="font-size:11px;color:#929292;text-decoration:none;opacity:.8;">Privacidad</a>
+    <a href="/cookies.html" style="font-size:11px;color:#929292;text-decoration:none;opacity:.8;">Cookies</a>
   </nav>
   <p style="font-size:11px;font-weight:300;line-height:1.6;color:#c9c3bb;opacity:.8;max-width:760px;margin:0 auto 10px;">La información de este sitio es general y no constituye asesoría jurídica individual. La asesoría profesional comienza con la sesión contratada y según los antecedentes que se proporcionen.</p>
   <p style="font-size:12px;font-weight:300;letter-spacing:2px;color:#c98955;opacity:.75;text-align:center;">© Divorcio Internacional</p>
@@ -959,56 +959,5 @@ nav.scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border
   document.querySelectorAll('.op-acc-trigger').forEach(b=>{b.addEventListener('click',()=>{const i=b.parentElement,o=i.classList.contains('open');document.querySelectorAll('.op-acc-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open');});});
 </script>
  
-<div id="cookie-consent" role="dialog" aria-live="polite" aria-label="Preferencias de cookies" style="display:none;position:fixed;z-index:99999;left:18px;right:18px;bottom:18px;max-width:760px;margin:auto;background:#171411;color:#f4eee7;border:1px solid #9b744d;box-shadow:0 12px 45px rgba(0,0,0,.45);padding:22px 24px;font-family:Jost,Arial,sans-serif;">
-  <div style="font-family:'Cormorant Garamond',serif;font-size:25px;color:#dba172;margin-bottom:6px;">Tu privacidad importa</div>
-  <p style="font-size:14px;line-height:1.6;color:#e5ddd4;margin:0 0 16px;">Utilizamos cookies y tecnologías similares necesarias para el funcionamiento del sitio. Con tu autorización también podemos utilizar herramientas de analítica y publicidad de Google y Meta para medir visitas e interacciones. Puedes aceptar o rechazar estas herramientas no esenciales. <a href="/cookies.html" style="color:#e3b889;text-decoration:underline;">Leer política de cookies</a>.</p>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;">
-    <button type="button" id="cookie-accept" style="background:#c98955;color:#171411;border:1px solid #c98955;padding:10px 18px;font:500 13px Jost,Arial,sans-serif;cursor:pointer;">Aceptar todas</button>
-    <button type="button" id="cookie-reject" style="background:transparent;color:#f4eee7;border:1px solid #a99a8a;padding:10px 18px;font:400 13px Jost,Arial,sans-serif;cursor:pointer;">Rechazar no esenciales</button>
-  </div>
-</div>
-
-
-<script>
-(function(){
-  const KEY='dis_cookie_consent_v1';
-  const panel=document.getElementById('cookie-consent');
-  function loadAnalytics(){
-    if(window.__disTrackingLoaded)return;
-    window.__disTrackingLoaded=true;
-    window.dataLayer=window.dataLayer||[];
-    window.gtag=function(){window.dataLayer.push(arguments);};
-    window.gtag('js',new Date());
-    window.gtag('config','G-YT50CS18QG');
-    const ga=document.createElement('script');
-    ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-YT50CS18QG';
-    document.head.appendChild(ga);
-    !function(f,b,e,v,n,t,s){
-      if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
-      t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
-    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    window.fbq('init','2739206456473065');
-    window.fbq('track','PageView');
-  }
-  function save(choice){
-    try{localStorage.setItem(KEY,choice);}catch(e){}
-    if(choice==='accepted')loadAnalytics();
-    if(panel)panel.style.display='none';
-  }
-  let saved=null;
-  try{saved=localStorage.getItem(KEY);}catch(e){}
-  if(saved==='accepted')loadAnalytics();
-  else if(saved!=='rejected'&&panel)panel.style.display='block';
-  const accept=document.getElementById('cookie-accept');
-  const reject=document.getElementById('cookie-reject');
-  if(accept)accept.addEventListener('click',function(){save('accepted');});
-  if(reject)reject.addEventListener('click',function(){save('rejected');});
-  document.querySelectorAll('a[href="/cookies.html"]').forEach(function(link){
-    if(link.closest('footer'))return;
-  });
-})();
-</script>
-
 </body>
 </html>
